@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LaughCoin (LOL)</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+      <a class="navbar-brand" href="#">LaughCoin (LOL)</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="#home">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#ask">Ask a Question</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#gallery">Meme Gallery</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#roadmap">Roadmap</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#faq">FAQ</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Home Section -->
+  <section id="home" class="py-5 text-center bg-light">
+    <div class="container">
+      <h1 class="display-4">Welcome to LaughCoin (LOL)</h1>
+      <p class="lead">The meme coin that brings laughter to crypto! Ask a question, get a hilarious response, and laugh your way to the moon! 🚀😂</p>
+      <img src="https://via.placeholder.com/400" alt="LaughCoin Logo" class="img-fluid my-4">
+      <a href="#ask" class="btn btn-primary btn-lg">Ask a Question</a>
+    </div>
+  </section>
+
+  <!-- Ask a Question Section -->
+  <section id="ask" class="py-5">
+    <div class="container">
+      <h2 class="text-center mb-4">Ask a Question</h2>
+      <div class="row justify-content-center">
+        <div class="col-md-6">
+          <form id="questionForm">
+            <div class="mb-3">
+              <input type="text" class="form-control" id="questionInput" placeholder="Ask your question..." required>
+            </div>
+            <button type="submit" class="btn btn-primary w-100">Get a Funny Response</button>
+          </form>
+          <div id="response" class="mt-4 text-center"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Meme Gallery Section -->
+  <section id="gallery" class="py-5 bg-light">
+    <div class="container">
+      <h2 class="text-center mb-4">Meme Gallery</h2>
+      <div class="row">
+        <div class="col-md-4 mb-4">
+          <img src="https://via.placeholder.com/300" alt="Meme 1" class="img-fluid rounded">
+        </div>
+        <div class="col-md-4 mb-4">
+          <img src="https://via.placeholder.com/300" alt="Meme 2" class="img-fluid rounded">
+        </div>
+        <div class="col-md-4 mb-4">
+          <img src="https://via.placeholder.com/300" alt="Meme 3" class="img-fluid rounded">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Roadmap Section -->
+  <section id="roadmap" class="py-5">
+    <div class="container">
+      <h2 class="text-center mb-4">Roadmap</h2>
+      <ul class="list-group">
+        <li class="list-group-item">Phase 1: Launch LaughCoin (LOL) token</li>
+        <li class="list-group-item">Phase 2: Integrate AI for funny responses</li>
+        <li class="list-group-item">Phase 3: Launch meme gallery and NFT collection</li>
+        <li class="list-group-item">Phase 4: Expand to gaming and metaverse</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section id="faq" class="py-5 bg-light">
+    <div class="container">
+      <h2 class="text-center mb-4">FAQ</h2>
+      <div class="accordion" id="faqAccordion">
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="headingOne">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+              What is LaughCoin (LOL)?
+            </button>
+          </h2>
+          <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#faqAccordion">
+            <div class="accordion-body">
+              LaughCoin (LOL) is a meme coin that combines humor, AI, and blockchain technology. Ask questions, get hilarious responses, and laugh your way to the moon! 🚀😂
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="headingTwo">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+              How can I get LOL tokens?
+            </button>
+          </h2>
+          <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#faqAccordion">
+            <div class="accordion-body">
+              You can earn LOL tokens by participating in meme contests, asking questions, and engaging with the community. Stay tuned for our token launch!
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-dark text-white text-center py-3">
+    <p>&copy; 2023 LaughCoin (LOL). All rights reserved.</p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
