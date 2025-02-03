@@ -11,6 +11,27 @@ body {
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 }
 
+/* Centered LOL text */
+#lol-header {
+  font-size: 3rem;
+  font-weight: bold;
+  text-align: center;
+  margin: 20px 0;
+  color: #ffcc00; /* Bright yellow for visibility */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+/* Twitter icon */
+#twitter-icon {
+  display: block;
+  width: 40px;
+  height: 40px;
+  margin: 10px auto;
+  background: url('https://cdn-icons-png.flaticon.com/512/733/733579.png') no-repeat center;
+  background-size: contain;
+  cursor: pointer;
+}
+
 /* Centered hero section */
 #home {
   background: rgba(0, 0, 0, 0.6);
@@ -40,6 +61,12 @@ body {
   max-width: 600px;
   margin: 50px auto;
   text-align: center;
+}
+
+/* Enlarged input box */
+#questionInput {
+  font-size: 1.5rem;
+  padding: 12px;
 }
 
 /* Button Styling */
