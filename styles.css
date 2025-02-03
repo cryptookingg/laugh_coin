@@ -1,23 +1,64 @@
+/* Set a fun background image */
 body {
-  font-family: Arial, sans-serif;
+  background: url('https://raw.githubusercontent.com/cryptookingg/laugh_coin/main/background.jpg') no-repeat center center fixed;
+  background-size: cover;
+  color: white;
+  font-family: 'Arial', sans-serif;
 }
 
-section {
-  padding: 60px 0;
+/* Navbar styling */
+.navbar {
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 }
 
+/* Centered hero section */
 #home {
-  background: #f8f9fa;
+  background: rgba(0, 0, 0, 0.6);
+  padding: 50px 20px;
+  color: white;
+  border-radius: 15px;
+  text-align: center;
+  max-width: 800px;
+  margin: 50px auto;
 }
 
-#gallery img {
-  transition: transform 0.3s ease;
+/* Style the image */
+#home img {
+  max-width: 200px; /* Smaller image */
+  display: block;
+  margin: 0 auto 20px auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
-#gallery img:hover {
+/* Ask section */
+#ask {
+  background: rgba(255, 255, 255, 0.9);
+  color: black;
+  padding: 40px;
+  border-radius: 15px;
+  max-width: 600px;
+  margin: 50px auto;
+  text-align: center;
+}
+
+/* Button Styling */
+.btn-primary {
+  background-color: #ffcc00;
+  color: black;
+  font-weight: bold;
+  border: none;
+  transition: 0.3s;
+}
+
+.btn-primary:hover {
+  background-color: #ffaa00;
   transform: scale(1.05);
 }
 
+/* Footer */
 footer {
-  background: #343a40;
+  background: rgba(0, 0, 0, 0.8);
+  padding: 10px;
+  text-align: center;
 }
