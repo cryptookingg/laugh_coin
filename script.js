@@ -3,7 +3,7 @@ document.getElementById('questionForm').addEventListener('submit', function (e) 
   e.preventDefault();
   const question = document.getElementById('questionInput').value;
 
-   Simulate an AI response (replace with actual API call later)
+   // Simulate an AI response (replace with actual API call later)
   const responses = [
     To the moon! 🚀,
     Because memes make the world go round! 😂,
