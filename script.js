@@ -1,8 +1,18 @@
-    document.getElementById('questionForm').addEventListener('submit', async function (e) {
+document.getElementById('questionForm').addEventListener('submit', async function (e) {
     e.preventDefault();
-    const question = document.getElementById('questionInput').value;
+    const questionInput = document.getElementById('questionInput');
+    const responseDiv = document.getElementById('response');
+    const question = questionInput.value.trim();
 
-    const mistralApiKey = "J9U4UCOEyboOjjI9nYZdDsW9tyiTXnsr"; // Replace with your actual Mistral API key
+    if (!question) {
+        responseDiv.innerHTML = `<div class="alert alert-warning">Please enter a question first! 🤔</div>`;
+        return;
+    }
+
+    // Show loading message
+    responseDiv.innerHTML = `<div class="alert alert-info">Thinking... 🤖💭</div>`;
+
+    const mistralApiKey = "J9U4UCOEyboOjjI9nYZdDsW9tyiTXnsr"; // ⚠️ Keeping API key in frontend
 
     try {
         const response = await fetch("https://api.mistral.ai/v1/chat/completions", {
@@ -12,33 +22,36 @@
                 "Authorization": `Bearer ${mistralApiKey}`,
             },
             body: JSON.stringify({
-                model: "mistral-small", // You can use "mistral-medium" for better responses
+                model: "mistral-small", // You can change this to "mistral-medium" for better responses
                 messages: [
                     {
                         role: "system",
-                        content: "You are a sarcastic, meme-obsessed AI oracle. Respond to questions with absurd humor, internet slang, crypto jokes, naughty talks, flirty replies and pop culture. Always keep answers under 2 sentences. Add emojis or images to answer.",
+                        content: "You are a sarcastic, meme-obsessed AI oracle. Respond with absurd humor, crypto jokes, flirty replies, and pop culture. Keep it under 2 sentences. Add emojis where needed.",
                     },
                     { role: "user", content: question }
                 ],
-                temperature: 0.9, // Controls randomness (higher = more fun)
+                temperature: 0.9, // Higher = more creative/funny
                 max_tokens: 100, // Limits response length
             }),
         });
 
+        if (!response.ok) throw new Error(`API error: ${response.status}`);
+
         const data = await response.json();
-        const memeResponse = data.choices[0].message.content;
+        const memeResponse = data.choices?.[0]?.message?.content || "LOL, I got nothing! 😂";
 
         // Display the response
-        document.getElementById('response').innerHTML = `
+        responseDiv.innerHTML = `
             <div class="alert alert-success">
                 <strong>Question:</strong> ${question}<br>
                 <strong>Response:</strong> ${memeResponse}
             </div>
         `;
+
+        // Clear input after submission
+        questionInput.value = "";
     } catch (error) {
         console.error("Error fetching response:", error);
-        document.getElementById('response').innerHTML = `
-            <div class="alert alert-danger">Oops! Something went wrong. Try again.</div>
-        `;
+        responseDiv.innerHTML = `<div class="alert alert-danger">Oops! Something went wrong. Try again later. 😢</div>`;
     }
 });
