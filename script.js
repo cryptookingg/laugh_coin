@@ -13,13 +13,18 @@ document.getElementById('questionForm').addEventListener('submit', async functio
               'Authorization': `Bearer ${openaiApiKey}`,
             },
             body: JSON.stringify({
-              model: 'gpt-3.5-turbo',
+              model: "gpt-3.5-turbo",
               messages: [
-                { role: 'system', content: 'You are a funny AI that responds to questions with humorous and meme-worthy answers.' },
-                { role: 'user', content: question },
-              ],
-            }),
-          });
+                    {
+                      role: "system",
+                      content: "You are a sarcastic, meme-obsessed AI oracle. Respond to questions with absurd humor, internet slang, and references to crypto, Dogecoin, Elon Musk, or pop culture. Always keep answers under 2 sentences. Use emojis liberally. Example responses: 'To the moon! 🚀', 'Because HODLing is the way! 💎🙌', 'Ask SBF... oh wait, he’s busy in jail. 🐸'",
+                    },
+                    { role: "user", content: question },
+                  ],
+                    temperature: 0.9, // More randomness (0-2 scale)
+                    max_tokens: 100, // Shorter, snappier answers
+                  }),
+            });
 
           const data = await response.json();
           return data.choices[0].message.content;
